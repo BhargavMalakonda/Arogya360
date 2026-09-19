@@ -1,0 +1,14 @@
+{
+  "_note": "Demo pincode dataset for Arogya360 heatmap. Chennai / Kattankulathur area only. To add more pincodes, append entries in the same format. Coordinates are verified centroids.",
+
+  "603203": { "lat": 12.8230, "lng": 80.0444, "label": "Kattankulathur" },
+  "600001": { "lat": 13.0827, "lng": 80.2707, "label": "Chennai Central" },
+  "600044": { "lat": 13.0067, "lng": 80.2206, "label": "Adambakkam" },
+  "600041": { "lat": 12.9942, "lng": 80.1729, "label": "Pallikaranai" },
+  "600096": { "lat": 12.9165, "lng": 80.2284, "label": "Perungudi" },
+  "600119": { "lat": 12.8438, "lng": 80.1534, "label": "Guduvanchery" },
+  "600073": { "lat": 13.0593, "lng": 80.2087, "label": "Porur" },
+  "600063": { "lat": 12.9698, "lng": 80.2501, "label": "Sholinganallur" },
+  "603202": { "lat": 12.8119, "lng": 80.0352, "label": "Chengalpattu" },
+  "603001": { "lat": 12.6966, "lng": 79.9711, "label": "Chengalpattu Town" }
+}

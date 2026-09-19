@@ -1,0 +1,463 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* =============================================================================
+   Stage 1 — Ethereal Clinical Glass design-token foundation
+   Source of truth: C:\Users\EJU\Desktop\Aiims Delhi\DESIGN.md
+
+   These custom properties mirror the Tailwind token values so they are
+   accessible in arbitrary CSS contexts (pseudo-elements, inline styles,
+   CSS animations) where Tailwind utilities cannot be applied.
+   ============================================================================= */
+
+/* ── CSS Custom Properties ─────────────────────────────────────────────────── */
+:root {
+
+  /* ── DESIGN.md Surface role tokens ─────────────────────────────────────── */
+  --color-surface:                   #fcf8ff;
+  --color-surface-dim:               #d8d7fc;
+  --color-surface-bright:            #fcf8ff;
+  --color-surface-container-lowest:  #ffffff;
+  --color-surface-container-low:     #f5f2ff;
+  --color-surface-container:         #eeecff;
+  --color-surface-container-high:    #e8e6ff;
+  --color-surface-container-highest: #e1e0ff;
+  --color-on-surface:                #181934;
+  --color-on-surface-variant:        #464554;
+  --color-inverse-surface:           #2d2e4b;
+  --color-inverse-on-surface:        #f2efff;
+  --color-outline:                   #777585;
+  --color-outline-variant:           #c7c4d6;
+  --color-surface-tint:              #4f4ccd;
+  --color-surface-variant:           #e1e0ff;
+  --color-background:                #fcf8ff;
+  --color-on-background:             #181934;
+
+  /* ── DESIGN.md Primary role tokens ──────────────────────────────────────── */
+  --color-primary:                   #3f3bbd;
+  --color-on-primary:                #ffffff;
+  --color-primary-container:         #5856d6;
+  --color-on-primary-container:      #e7e4ff;
+  --color-inverse-primary:           #c2c1ff;
+
+  /* ── DESIGN.md Secondary role tokens ────────────────────────────────────── */
+  --color-secondary:                 #0060ac;
+  --color-on-secondary:              #ffffff;
+  --color-secondary-container:       #68abff;
+  --color-on-secondary-container:    #003e73;
+
+  /* ── DESIGN.md Tertiary role tokens ─────────────────────────────────────── */
+  --color-tertiary:                  #7120b5;
+  --color-on-tertiary:               #ffffff;
+  --color-tertiary-container:        #8b40cf;
+  --color-on-tertiary-container:     #f3e0ff;
+
+  /* ── DESIGN.md Error role tokens ─────────────────────────────────────────── */
+  --color-error:                     #ba1a1a;
+  --color-on-error:                  #ffffff;
+  --color-error-container:           #ffdad6;
+  --color-on-error-container:        #93000a;
+
+  /* ── Brand atmospheric hues (DESIGN.md Brand & Style prose) ──────────────── */
+  /* Distinct from role tokens — used for gradients, glows, accents            */
+  --color-brand-gradient-from:       #706DF2;   /* Primary Violet light          */
+  --color-brand-gradient-to:         #5856D6;   /* Primary Violet deep           */
+  --color-brand-violet:              #5856D6;
+  --color-brand-lilac:               #C084FC;   /* Iridescent Lilac              */
+  --color-brand-celestial:           #4A90E2;   /* Celestial Blue                */
+
+  /* ── Arogya360 locked ESI tokens (claude.md — medical safety convention) ── */
+  --color-esi-emergency:             #DC2626;   /* ESI-1 / ESI-2 — never change  */
+  --color-esi-warning:               #F59E0B;   /* ESI-3 — never change          */
+  --color-esi-success:               #16A34A;   /* ESI-4 / ESI-5 — never change  */
+
+  /* ── DESIGN.md Semantic UI state hues (from Brand & Style prose) ─────────── */
+  /* These differ from the formal role tokens above — used for status displays  */
+  --color-critical:                  #E5484D;   /* Vitals alert / destructive    */
+  --color-critical-mist:             #FEECEE;
+  --color-success-metric:            #30A46C;   /* Normal metric                 */
+  --color-success-mist:              #EBFBF2;
+  --color-warning-metric:            #F76808;   /* Pending lab / warning         */
+  --color-warning-mist:              #FFF4EB;
+
+  /* ── DESIGN.md Glass fill values (Elevation Tiers 1–3) ───────────────────── */
+  --glass-1-bg:         rgba(255, 255, 255, 0.72);  /* Level 1 — Frosted Panels  */
+  --glass-2-bg:         rgba(255, 255, 255, 0.88);  /* Level 2 — Interactive     */
+  --glass-3-bg:         rgba(255, 255, 255, 0.95);  /* Level 3 — Floating        */
+
+  /* ── DESIGN.md Glass borders (exact approved values) ────────────────────── */
+  --glass-1-border:     rgba(255, 255, 255, 0.85);  /* Level 1                   */
+  --glass-2-border:     rgba(255, 255, 255, 0.95);  /* Level 2                   */
+
+  /* ── DESIGN.md Glass backdrop filters ───────────────────────────────────── */
+  --glass-1-filter:     blur(20px) saturate(170%);  /* Level 1                   */
+  --glass-2-filter:     blur(28px) saturate(190%);  /* Level 2                   */
+
+  /* ── DESIGN.md Glass shadows ─────────────────────────────────────────────── */
+  --glass-1-shadow:
+    0 8px 32px 0 rgba(88, 86, 214, 0.06),
+    0 2px 8px 0 rgba(30, 31, 59, 0.03);
+  --glass-2-shadow:
+    0 16px 48px -4px rgba(88, 86, 214, 0.12),
+    0 4px 12px 0 rgba(30, 31, 59, 0.05);
+  --glass-3-shadow:     0 24px 64px -8px rgba(30, 31, 59, 0.16);
+  --glass-3-halo:       0 0 24px 2px rgba(112, 109, 242, 0.25);
+
+  /* ── DESIGN.md Level 2 top highlight ─────────────────────────────────────── */
+  --glass-2-highlight:  inset 0 1px 1px 0 rgba(255, 255, 255, 0.90);
+
+  /* ── DESIGN.md Primary button values ─────────────────────────────────────── */
+  --btn-primary-gradient: linear-gradient(135deg, #706DF2 0%, #5856D6 100%);
+  --btn-primary-shadow:   0 8px 20px rgba(88, 86, 214, 0.30);
+  --btn-primary-glow:     inset 0 1px 1px rgba(255, 255, 255, 0.40);
+
+  /* ── DESIGN.md Secondary button values ───────────────────────────────────── */
+  --btn-secondary-bg:           rgba(255, 255, 255, 0.65);
+  --btn-secondary-border:       rgba(255, 255, 255, 0.80);
+  --btn-secondary-text:         #1E1F3B;
+  --btn-secondary-hover-bg:     rgba(255, 255, 255, 0.90);
+  --btn-secondary-hover-border: #C084FC;   /* lilac border accent on hover      */
+
+  /* ── DESIGN.md Input field values ───────────────────────────────────────── */
+  --input-bg:           rgba(255, 255, 255, 0.60);
+  --input-border:       rgba(88, 86, 214, 0.20);
+  --input-focus-ring:   #5856D6;
+  --input-focus-bloom:  0 0 0 4px rgba(88, 86, 214, 0.15);
+  --input-label-color:  #1E1F3B;
+  --input-hint-color:   #5A5D7A;
+
+  /* ── DESIGN.md Language selector ─────────────────────────────────────────── */
+  --lang-active-bg:     rgba(255, 255, 255, 1);
+  --lang-active-text:   #5856D6;
+  --lang-active-shadow: 0 4px 12px rgba(88, 86, 214, 0.10);
+  --lang-min-height:    40px;
+
+  /* ── DESIGN.md Atmosphere canvas ─────────────────────────────────────────── */
+  /* Luminous pearl base (#F8F9FE) + dual radial ambient glows.                */
+  /* IMPORTANT: use percentage-based positions so they scale at any viewport   */
+  /* width, including 360px. No fixed-width elements. No overflow created.     */
+  --atmosphere-canvas: #F8F9FE;
+  --atmosphere-top:
+    radial-gradient(circle at 70% 10%, rgba(175, 196, 255, 0.45) 0%, transparent 65%);
+  --atmosphere-bottom:
+    radial-gradient(circle at 20% 90%, rgba(226, 206, 255, 0.40) 0%, transparent 70%);
+
+  /* ── Kids Zone warm atmosphere (Stage 8 adaptation) ─────────────────────── */
+  --kids-atmosphere-canvas: #FFFBF0;
+  --kids-atmosphere-top:
+    radial-gradient(circle at 70% 10%, rgba(255, 213, 153, 0.40) 0%, transparent 65%);
+  --kids-atmosphere-bottom:
+    radial-gradient(circle at 20% 90%, rgba(255, 235, 180, 0.35) 0%, transparent 70%);
+
+  /* ── Typography font stack shortcuts ─────────────────────────────────────── */
+  /* DESIGN.md-compliant full Indic fallback stacks                            */
+
+  /* Combined heading stack — covers both Hindi and Telugu scripts             */
+  --font-heading:
+    "Plus Jakarta Sans",
+    "Noto Sans Devanagari",
+    "Kohinoor Devanagari",
+    "Noto Sans Telugu",
+    "Kohinoor Telugu",
+    ui-sans-serif,
+    system-ui,
+    sans-serif;
+
+  /* Per-script stacks per DESIGN.md spec (exact verbatim stacks)              */
+  /* Hindi (Devanagari):                                                        */
+  --font-heading-hi:
+    "Plus Jakarta Sans",
+    "Noto Sans Devanagari",
+    "Kohinoor Devanagari",
+    sans-serif;
+  /* Telugu:                                                                    */
+  --font-heading-te:
+    "Plus Jakarta Sans",
+    "Noto Sans Telugu",
+    "Kohinoor Telugu",
+    sans-serif;
+
+  /* Body — Inter                                                               */
+  --font-body:
+    Inter,
+    ui-sans-serif,
+    system-ui,
+    sans-serif;
+
+  /* ── DESIGN.md multilingual line-height boost ────────────────────────────── */
+  /* +2px added to line-heights when Hindi or Telugu is active                  */
+  --lang-lh-boost: 2px;
+
+  /* ── Motion tokens (DESIGN.md-compatible) ───────────────────────────────── */
+  /* DESIGN.md specifies smooth transitions throughout the glass system.        */
+  /* These tokens are used in Stage 2+ component upgrades.                      */
+
+  /* Durations */
+  --duration-fast:    150ms;   /* micro-interactions: button press, toggle     */
+  --duration-base:    200ms;   /* standard: hover states, color changes        */
+  --duration-slow:    300ms;   /* deliberate: panel reveal, card entrance      */
+  --duration-ambient: 500ms;   /* atmospheric: progress bars, badge updates    */
+
+  /* Easings */
+  --ease-out:         cubic-bezier(0.0, 0.0, 0.2, 1.0);  /* decelerate out    */
+  --ease-in-out:      cubic-bezier(0.4, 0.0, 0.2, 1.0);  /* standard material */
+  --ease-spring:      cubic-bezier(0.34, 1.56, 0.64, 1); /* subtle spring     */
+
+  /* Composed transition shorthands */
+  --transition-base:
+    color var(--duration-base) var(--ease-out),
+    background-color var(--duration-base) var(--ease-out),
+    border-color var(--duration-base) var(--ease-out),
+    opacity var(--duration-base) var(--ease-out);
+  --transition-shadow:
+    box-shadow var(--duration-base) var(--ease-out),
+    transform var(--duration-base) var(--ease-out);
+  --transition-glass:
+    background-color var(--duration-base) var(--ease-out),
+    backdrop-filter var(--duration-slow) var(--ease-in-out),
+    box-shadow var(--duration-base) var(--ease-out),
+    border-color var(--duration-base) var(--ease-out);
+}
+
+
+/* ── @layer base — global resets and body defaults ─────────────────────────── */
+@layer base {
+
+  /* ── Atmospheric background on html element ─────────────────────────────── */
+  /* Applied on html (not body) so the atmosphere fills the full viewport even  */
+  /* when body content is shorter than the screen height.                       */
+  /* Using percentage-based radial-gradient positions ensures no horizontal     */
+  /* overflow at any viewport width, including 360px mobile.                    */
+  /* overflow-x: hidden on html prevents any sub-pixel rounding from scrolling. */
+  html {
+    background-color: var(--atmosphere-canvas);    /* #F8F9FE — DESIGN.md base  */
+    background-image:
+      var(--atmosphere-top),
+      var(--atmosphere-bottom);
+    background-attachment: fixed;                  /* gradient stays fixed while content scrolls */
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow-x: hidden;                            /* no horizontal scroll at any width         */
+    min-height: 100%;
+  }
+
+  /* ── Base body ───────────────────────────────────────────────────────────── */
+  /* Transparent bg so the html atmospheric gradient shows through.             */
+  body {
+    background-color: transparent;
+    color: var(--color-on-surface);                /* #181934 — deep clinical text */
+    font-family: var(--font-body);                 /* Inter for body text          */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    min-height: 100vh;
+    overflow-x: hidden;                            /* belt-and-suspenders at 360px */
+  }
+
+  /* ── Headings → Plus Jakarta Sans (DESIGN.md) ────────────────────────────── */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+  }
+
+  /* ── Multilingual line-height boost ──────────────────────────────────────── */
+  /* Applied by parent element when language_pref is 'hi' or 'te'.              */
+  /* Usage in JSX: className={['hi','te'].includes(lang) ? 'lang-indic' : ''}   */
+  .lang-indic {
+    line-height: calc(1lh + var(--lang-lh-boost));
+  }
+  /* Fallback for browsers that do not support the 1lh unit                    */
+  @supports not (line-height: 1lh) {
+    .lang-indic {
+      line-height: 1.7;
+    }
+  }
+
+  /* ── Reduced motion ─────────────────────────────────────────────────────── */
+  /* Disables non-essential transitions and animations for users who prefer it. */
+  /* Functionality is never affected — only decorative motion is removed.       */
+  /* Emergency states, loading states, and interactive feedback remain.         */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+
+    /* Preserve animate-pulse on loading skeletons and ESI-critical indicators  */
+    /* so users still see loading feedback and emergency pulsing                 */
+    .emergency-pulse,
+    [class*="animate-pulse"][data-critical="true"] {
+      animation-duration: revert !important;
+      animation-iteration-count: revert !important;
+    }
+  }
+}
+
+
+/* ── @layer components — reusable glass surface helpers ────────────────────── */
+/*    Defined in Stage 1 so they are available when Stage 2 components          */
+/*    adopt them. Glass level aliases are clean — no duplication.               */
+@layer components {
+
+  /* ── .glass-panel — primary reusable glass surface (DESIGN.md Level 1) ───── */
+  /* THIS is the canonical class for all frosted glass cards and panels.         */
+  /* Implements exact DESIGN.md Level 1 Frosted Panels & Cards specification:   */
+  /*   background: rgba(255,255,255,0.72)                                        */
+  /*   backdrop-filter: blur(20px) saturate(170%)                                */
+  /*   border: 1px solid rgba(255,255,255,0.85)                                  */
+  /*   shadow: 0 8px 32px 0 rgba(88,86,214,0.06), 0 2px 8px 0 rgba(30,31,59,.03) */
+  .glass-panel {
+    background-color: rgba(255, 255, 255, 0.72);
+    -webkit-backdrop-filter: blur(20px) saturate(170%);
+    backdrop-filter: blur(20px) saturate(170%);
+    border: 1px solid rgba(255, 255, 255, 0.85);
+    box-shadow:
+      0 8px 32px 0 rgba(88, 86, 214, 0.06),
+      0 2px 8px 0 rgba(30, 31, 59, 0.03);
+  }
+
+  /* ── .glass-1 — alias for .glass-panel (Level 1) ─────────────────────────── */
+  /* Kept separately so Stage 2+ components can use either name.                */
+  .glass-1 {
+    background-color: var(--glass-1-bg);
+    -webkit-backdrop-filter: var(--glass-1-filter);
+    backdrop-filter: var(--glass-1-filter);
+    border: 1px solid var(--glass-1-border);
+    box-shadow: var(--glass-1-shadow);
+  }
+
+  /* ── .glass-2 — Level 2 (Interactive Elements, Modals, TopBar) ─────────── */
+  .glass-2 {
+    background-color: var(--glass-2-bg);
+    -webkit-backdrop-filter: var(--glass-2-filter);
+    backdrop-filter: var(--glass-2-filter);
+    border: 1px solid var(--glass-2-border);
+    box-shadow: var(--glass-2-shadow), var(--glass-2-highlight);
+  }
+
+  /* ── .glass-3 — Level 3 (Floating Overlays) ──────────────────────────────── */
+  /* NOTE: NOT applied to EmergencyBanner — that remains fully opaque red.      */
+  .glass-3 {
+    background-color: var(--glass-3-bg);
+    border: 1px solid var(--glass-2-border);
+    box-shadow: var(--glass-3-shadow), var(--glass-3-halo);
+  }
+
+  /* ── .input-glass — DESIGN.md form input specification ──────────────────── */
+  .input-glass {
+    background-color: var(--input-bg);
+    border: 1px solid var(--input-border);
+    border-radius: 0.75rem;   /* 12px — DESIGN.md rounded-md = 0.75rem         */
+    transition: var(--transition-base);
+  }
+  .input-glass:focus {
+    outline: none;
+    background-color: #ffffff;
+    border-color: var(--input-focus-ring);
+    box-shadow: 0 0 0 2px var(--input-focus-ring), var(--input-focus-bloom);
+  }
+
+  /* ── .tabular-nums — targeted tabular number display ─────────────────────── */
+  /* Per approval decision #5: applied ONLY to numeric medical displays.         */
+  /* Usage: ESI levels, dates/timestamps, distances, XP/progress, vitals.       */
+  /* Do NOT add to general paragraph text.                                       */
+  .tabular-nums {
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+
+/* ── @layer utilities — single-purpose helpers ──────────────────────────────── */
+@layer utilities {
+
+  /* ── .atmosphere-page — full atmospheric background ─────────────────────── */
+  /* Applied to Layout.jsx wrapper div in Stage 2. The html element already    */
+  /* carries the atmospheric background from @layer base; this class is         */
+  /* available if a specific sub-container needs to re-declare it.              */
+  .atmosphere-page {
+    background-color: var(--atmosphere-canvas);
+    background-image:
+      var(--atmosphere-top),
+      var(--atmosphere-bottom);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  /* ── .atmosphere-kids — warm Kids Zone atmospheric variant ──────────────── */
+  /* Applied to KidsZone.jsx root div wrapper in Stage 8.                      */
+  .atmosphere-kids {
+    background-color: var(--kids-atmosphere-canvas);
+    background-image:
+      var(--kids-atmosphere-top),
+      var(--kids-atmosphere-bottom);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  /* ── .page-enter — subtle fade + upward entrance on page mount ───────────── */
+  /* Applied to the root container of each page. 300ms — deliberate entrance.  */
+  /* prefers-reduced-motion collapses this to 1ms via the global override above.*/
+  .page-enter {
+    animation: page-enter var(--duration-slow, 300ms) var(--ease-out, cubic-bezier(0,0,0.2,1)) both;
+  }
+
+  /* ── .border-refraction — gradient border enhancement ───────────────────── */
+  /* Phase 2+ enhancement — declared now so the build includes it.              */
+  /* Activated in Stage 2 QA if gradient border fidelity is required.           */
+  .border-refraction {
+    border-image: linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.85) 0%,
+      rgba(164, 180, 250, 0.25) 100%
+    ) 1;
+  }
+}
+
+
+/* ── Stage 9 — Motion layer @keyframes ──────────────────────────────────────── */
+
+/* Page mount entrance: subtle 12px upward travel + opacity fade */
+@keyframes page-enter {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Skeleton shimmer — used by loading states as an alternative to animate-pulse */
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position:  200% center; }
+}
+
+/* ── prefers-reduced-motion: already handled globally in @layer base above. ── */
+/* The global rule collapses animation-duration to 0.01ms for all * elements,  */
+/* which covers .page-enter and @keyframes shimmer automatically.               */
+/* EmergencyBanner has NO animation class applied — it always renders at full   */
+/* opacity immediately. The global rule therefore cannot affect its visibility. */
+
+/* ── Find Care page — override CardContainer narrow default ──────────────────
+   FacilityList wraps content in CardContainer which has no explicit max-width.
+   The .find-care-wide wrapper removes the implied column constraint so
+   the healthcare directory occupies the full 1160px page width.           */
+.find-care-wide > div {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+}
+
+/* Individual facility cards inside FacilityList get the glass treatment */
+.find-care-wide .space-y-2 > div,
+.find-care-wide [class*="rounded-xl"] {
+  max-width: 100% !important;
+  width: 100% !important;
+}

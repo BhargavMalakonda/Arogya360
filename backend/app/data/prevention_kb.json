@@ -1,0 +1,35 @@
+{
+  "_sources": "WHO Global Health Guidelines, ICMR Disease-specific Guidelines, MoHFW National Health Mission advisories. Generic lifestyle guidance only — no medication names, no dosages.",
+
+  "respiratory": [
+    "Avoid exposure to tobacco smoke, indoor air pollution (e.g. burning biomass fuels), and dust — these are leading risk factors for respiratory infections per WHO guidelines.",
+    "Maintain good hand hygiene by washing hands with soap and water for at least 20 seconds, particularly before eating and after coughing or sneezing, to prevent transmission of respiratory pathogens.",
+    "Ensure adequate natural ventilation in living spaces; open windows regularly and avoid crowded enclosed areas during active outbreaks of respiratory illness.",
+    "Complete all recommended vaccinations including influenza and pneumococcal vaccines as advised by your doctor, especially if you are above 60 years, a child under 5, or have a chronic condition.",
+    "If diagnosed with or exposed to tuberculosis, complete the full course of treatment as prescribed and attend all follow-up visits — partial treatment leads to drug-resistant TB."
+  ],
+
+  "metabolic": [
+    "Maintain a healthy body weight through regular moderate-intensity physical activity (at least 150 minutes per week) and a balanced diet low in refined sugars and saturated fats, as recommended by the Indian Council of Medical Research.",
+    "Reduce intake of processed foods, sweetened beverages, and white rice in favour of whole grains, pulses, green vegetables, and low-glycaemic-index foods to help regulate blood sugar levels.",
+    "Monitor fasting blood glucose regularly if you have a family history of diabetes, are overweight, or are above 40 years of age — early detection allows lifestyle management before progression.",
+    "Stay well hydrated with water or coconut water; avoid sugary drinks, as excess sugar intake is directly linked to insulin resistance and type 2 diabetes risk.",
+    "Quit tobacco use in all forms — smoking and smokeless tobacco are independent risk factors for cardiovascular complications in people with diabetes."
+  ],
+
+  "cardiovascular": [
+    "Limit daily sodium intake to less than 5 grams (approximately one teaspoon of salt) as recommended by WHO to reduce the risk of high blood pressure and its complications.",
+    "Engage in at least 30 minutes of moderate aerobic exercise (walking, cycling, swimming) on most days of the week to help maintain healthy blood pressure and heart function.",
+    "Manage stress through relaxation techniques such as yoga, deep breathing, or meditation — chronic psychological stress is associated with elevated blood pressure in Indian population studies.",
+    "Avoid tobacco in all forms and limit alcohol consumption; both are established risk factors for hypertension, stroke, and coronary artery disease.",
+    "Attend regular health check-ups including blood pressure measurement at least once a year if you are above 30 years, as hypertension is often asymptomatic until a serious event occurs."
+  ],
+
+  "general": [
+    "Stay adequately hydrated (8–10 glasses of water per day) and maintain adequate rest — both support immune function and recovery from viral illnesses.",
+    "Practice food and water safety: consume only clean, treated drinking water and freshly cooked food, particularly during monsoon season when water-borne and vector-borne diseases are more common.",
+    "Use mosquito repellents, sleep under treated bed nets, and eliminate stagnant water around your home to prevent vector-borne diseases such as dengue and malaria.",
+    "Seek care early if symptoms worsen, last more than 3–5 days, or are accompanied by high fever, difficulty breathing, altered consciousness, or inability to retain fluids.",
+    "Maintain up-to-date immunisation records for yourself and your family as per the National Immunisation Schedule provided by MoHFW."
+  ]
+}

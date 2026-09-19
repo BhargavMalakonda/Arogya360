@@ -1,0 +1,139 @@
+{
+  "_comment": "Deterministic ESI scoring rules. Each disease entry lists symptom combos that trigger ESI-2 or ESI-3. If no combo matches, default is ESI-4. ESI-1 is NEVER assigned here — it is handled by the hard-coded emergency keyword engine before any LLM call.",
+  "scoring_instruction": "Evaluate ESI-2 combos first. If any ESI-2 combo matches, assign ESI-2. Then evaluate ESI-3 combos. If any ESI-3 combo matches, assign ESI-3. If neither matches, assign ESI-4.",
+
+  "Tuberculosis": {
+    "ESI-2": [
+      ["haemoptysis", "night_sweats", "weight_loss"],
+      ["coughing_blood", "fever"],
+      ["respiratory_failure"]
+    ],
+    "ESI-3": [
+      ["persistent_cough", "night_sweats"],
+      ["persistent_cough", "weight_loss"],
+      ["fever", "weight_loss"],
+      ["persistent_cough", "fever", "fatigue"]
+    ],
+    "ESI-4_default": "Mild cough without constitutional symptoms",
+    "symptom_category": "respiratory"
+  },
+
+  "Diabetes": {
+    "ESI-2": [
+      ["altered_consciousness", "extreme_thirst"],
+      ["vomiting", "fruity_breath", "extreme_thirst"],
+      ["confusion", "excessive_urination"],
+      ["hypoglycaemia_symptoms", "dizziness", "sweating"]
+    ],
+    "ESI-3": [
+      ["excessive_thirst", "excessive_urination", "fatigue"],
+      ["blurred_vision", "fatigue"],
+      ["weight_loss", "increased_hunger"],
+      ["slow_healing_wounds", "fatigue"],
+      ["tingling_extremities", "fatigue"]
+    ],
+    "ESI-4_default": "Mild increased thirst without systemic symptoms",
+    "symptom_category": "metabolic"
+  },
+
+  "Hypertension": {
+    "ESI-2": [
+      ["severe_headache", "vision_changes", "chest_pain"],
+      ["severe_headache", "nausea", "confusion"],
+      ["nosebleed", "severe_headache"],
+      ["chest_pain", "dizziness", "shortness_of_breath"]
+    ],
+    "ESI-3": [
+      ["persistent_headache", "dizziness"],
+      ["headache", "blurred_vision"],
+      ["palpitations", "headache"],
+      ["fatigue", "dizziness", "headache"]
+    ],
+    "ESI-4_default": "Occasional mild headache without associated symptoms",
+    "symptom_category": "cardiovascular"
+  },
+
+  "Dengue": {
+    "ESI-2": [
+      ["severe_abdominal_pain", "persistent_vomiting"],
+      ["bleeding_gums", "nosebleed", "fever"],
+      ["rapid_breathing", "lethargy", "fever"],
+      ["blood_in_stool", "fever"],
+      ["severe_body_pain", "low_platelet_signs"]
+    ],
+    "ESI-3": [
+      ["high_fever", "severe_headache", "body_pain"],
+      ["high_fever", "rash"],
+      ["retro_orbital_pain", "fever"],
+      ["joint_pain", "fever", "fatigue"],
+      ["nausea", "vomiting", "fever"]
+    ],
+    "ESI-4_default": "Mild fever with body ache, no warning signs",
+    "symptom_category": "general"
+  },
+
+  "Malaria": {
+    "ESI-2": [
+      ["altered_consciousness", "fever"],
+      ["seizures", "fever"],
+      ["severe_anaemia", "fever"],
+      ["jaundice", "fever", "body_pain"]
+    ],
+    "ESI-3": [
+      ["cyclical_fever", "chills", "sweating"],
+      ["high_fever", "fatigue", "body_pain"],
+      ["vomiting", "fever", "chills"],
+      ["headache", "fever", "muscle_pain"]
+    ],
+    "ESI-4_default": "Mild fever with chills, no severe symptoms",
+    "symptom_category": "general"
+  },
+
+  "Pneumonia": {
+    "ESI-2": [
+      ["high_fever", "difficulty_breathing", "chest_pain"],
+      ["rapid_breathing", "cyanosis"],
+      ["confusion", "high_fever", "cough"],
+      ["oxygen_saturation_low", "cough"]
+    ],
+    "ESI-3": [
+      ["productive_cough", "fever", "chest_pain"],
+      ["fever", "breathlessness", "fatigue"],
+      ["chills", "cough", "fever"],
+      ["pleuritic_pain", "fever"]
+    ],
+    "ESI-4_default": "Mild cough with low-grade fever, no breathlessness",
+    "symptom_category": "respiratory"
+  },
+
+  "Asthma": {
+    "ESI-2": [
+      ["severe_breathlessness", "unable_to_speak_full_sentences"],
+      ["cyanosis", "wheeze"],
+      ["silent_chest", "respiratory_distress"],
+      ["accessory_muscle_use", "severe_wheeze"]
+    ],
+    "ESI-3": [
+      ["wheeze", "breathlessness", "chest_tightness"],
+      ["nocturnal_cough", "breathlessness"],
+      ["exercise_induced_wheeze", "chest_tightness"],
+      ["breathlessness", "cough", "triggered_by_allergen"]
+    ],
+    "ESI-4_default": "Mild intermittent wheeze, well controlled",
+    "symptom_category": "respiratory"
+  },
+
+  "General Viral / Other": {
+    "ESI-2": [
+      ["high_fever", "neck_stiffness", "confusion"],
+      ["rash", "fever", "altered_consciousness"]
+    ],
+    "ESI-3": [
+      ["fever", "body_pain", "fatigue"],
+      ["sore_throat", "fever", "difficulty_swallowing"],
+      ["runny_nose", "fever", "body_pain"]
+    ],
+    "ESI-4_default": "Mild cold or flu-like illness without systemic involvement",
+    "symptom_category": "general"
+  }
+}

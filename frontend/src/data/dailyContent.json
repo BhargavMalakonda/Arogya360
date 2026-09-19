@@ -1,0 +1,33 @@
+{
+  "_comment": "Curated static content set — intentionally NOT LLM-generated. Hand-authored against WHO/ICMR preventive-health guidelines. Using static data rather than a live AI call for three reasons: (1) zero API cost and latency on every page load, (2) content is human-reviewed and stable, (3) avoids risk of the model producing numeric targets, medication names, or diagnostic claims in a patient-facing UI. Update this file manually when guidance changes.",
+
+  "goals": [
+    "Drink at least 6 glasses of water today and eat one extra serving of vegetables at a meal.",
+    "Take a 20-minute walk at a comfortable pace — morning or evening, wherever suits you.",
+    "Choose a whole-grain option (oats, brown rice, or whole-wheat bread) for one meal today.",
+    "Add one fruit to your breakfast or as a snack — any variety counts.",
+    "Replace one packaged or fried snack today with a handful of nuts, seeds, or fresh fruit.",
+    "Stand up and stretch for 5 minutes every hour if you have a desk-based day.",
+    "Cook or eat at least one home-prepared meal today — home cooking is a powerful preventive habit."
+  ],
+
+  "facts": [
+    "Washing hands with soap for 20 seconds before meals and after using the toilet prevents a wide range of infections, including diarrhoeal diseases that cause millions of preventable deaths each year (WHO).",
+    "Regular moderate physical activity — such as brisk walking — reduces the risk of cardiovascular disease, type 2 diabetes, and several cancers (WHO Global Action Plan on Physical Activity).",
+    "A diet rich in fruits, vegetables, legumes, and whole grains provides fibre and micronutrients that support immune function and reduce chronic-disease risk (ICMR Dietary Guidelines for Indians).",
+    "Tobacco use — including smokeless tobacco — is the single largest preventable cause of cancer in India; stopping at any age brings measurable health benefits within months (ICMR).",
+    "Getting vaccinated according to your national schedule protects not just you but also people around you who cannot be vaccinated — including newborns and immunocompromised individuals (WHO).",
+    "Most adults need 7–9 hours of sleep per night; consistently poor sleep is linked to higher risk of hypertension, obesity, and reduced immune response (WHO).",
+    "Unmanaged stress raises cortisol levels and can worsen blood pressure, digestion, and immunity — simple breathing exercises and social support are evidence-based first-line strategies (ICMR)."
+  ],
+
+  "tips": [
+    "Keep a reusable water bottle visible at your desk or workspace — a visible cue significantly increases daily water intake.",
+    "Prepare a mixed vegetable sabzi or salad in bulk at the start of the week so healthy food is always the easiest choice.",
+    "Schedule any routine preventive check-ups (blood pressure, blood sugar, eye test) that you have been postponing — early detection saves lives.",
+    "Store fruits and pre-cut vegetables at eye level in your refrigerator so they are the first thing you see when you open it.",
+    "Walk or use stairs instead of a lift or auto-rickshaw for short distances — incidental movement adds up across the day.",
+    "Read food labels before buying packaged food — look at sodium and saturated fat content, not just calories.",
+    "If you smoke or use tobacco, speak to a doctor or call the national quit-line (1800-11-2356) — every attempt at quitting increases the likelihood of permanent cessation."
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "fever":           ["Dengue", "Malaria", "Viral Fever", "Pneumonia"],
+  "cough":           ["Tuberculosis", "Pneumonia", "Asthma"],
+  "thirst":          ["Diabetes"],
+  "urination":       ["Diabetes"],
+  "headache":        ["Hypertension", "Dengue", "Viral Fever"],
+  "dizziness":       ["Hypertension", "Diabetes", "Anaemia"],
+  "breathlessness":  ["Asthma", "Pneumonia", "Tuberculosis"],
+  "chest_tightness": ["Asthma", "Pneumonia"],
+  "body_pain":       ["Dengue", "Malaria", "Viral Fever"],
+  "fatigue":         ["Diabetes", "Tuberculosis", "Anaemia", "Malaria"]
+}

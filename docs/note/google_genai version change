@@ -1,0 +1,5 @@
+google-generativeai (the package named in the original Phase 3 prompt) is deprecated, and switched to google-genai
+
+models/gemini-3.6-flash)
+corrected GEMINI_TIMEOUT_SECONDS = 20
+max_output_tokens = 2048

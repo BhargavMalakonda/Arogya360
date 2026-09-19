@@ -1,0 +1,7 @@
+{
+  "default": {
+    "health_helpline": "104",
+    "ambulance": "108"
+  },
+  "by_district": {}
+}

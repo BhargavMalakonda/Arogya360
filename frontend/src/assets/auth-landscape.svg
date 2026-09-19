@@ -1,0 +1,198 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <!-- Sky gradient -->
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#e8eeff"/>
+      <stop offset="60%" stop-color="#d4dcf8"/>
+      <stop offset="100%" stop-color="#c8d8f5"/>
+    </linearGradient>
+    <!-- Sun glow radial -->
+    <radialGradient id="sunGlow" cx="38%" cy="68%" r="20%">
+      <stop offset="0%" stop-color="#ffe8a0" stop-opacity="0.9"/>
+      <stop offset="40%" stop-color="#ffd070" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#ffd070" stop-opacity="0"/>
+    </radialGradient>
+    <!-- Far hill gradient -->
+    <linearGradient id="hillFar" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#b8c8f0"/>
+      <stop offset="100%" stop-color="#9eb4e8"/>
+    </linearGradient>
+    <!-- Mid hill gradient -->
+    <linearGradient id="hillMid" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#a8c8d8"/>
+      <stop offset="100%" stop-color="#8eb8ce"/>
+    </linearGradient>
+    <!-- Near hill / ground gradient -->
+    <linearGradient id="ground" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#b8d8c0"/>
+      <stop offset="100%" stop-color="#98c0aa"/>
+    </linearGradient>
+    <!-- Road gradient -->
+    <linearGradient id="road" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#d0dce8"/>
+      <stop offset="100%" stop-color="#b8ccd8"/>
+    </linearGradient>
+    <!-- Water / river -->
+    <linearGradient id="water" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#b0d4f0"/>
+      <stop offset="100%" stop-color="#90c0e8"/>
+    </linearGradient>
+    <!-- Tree foliage variants -->
+    <linearGradient id="tree1" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#78c890"/>
+      <stop offset="100%" stop-color="#50a870"/>
+    </linearGradient>
+    <linearGradient id="tree2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#90c8a8"/>
+      <stop offset="100%" stop-color="#68b088"/>
+    </linearGradient>
+    <linearGradient id="tree3" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#6ab8b0"/>
+      <stop offset="100%" stop-color="#48a098"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Sky background -->
+  <rect width="800" height="400" fill="url(#sky)"/>
+
+  <!-- Sun glow -->
+  <ellipse cx="305" cy="272" rx="90" ry="70" fill="url(#sunGlow)"/>
+  <!-- Sun disc -->
+  <circle cx="305" cy="258" r="28" fill="#ffe090" opacity="0.85"/>
+  <circle cx="305" cy="258" r="22" fill="#ffd060" opacity="0.9"/>
+
+  <!-- Far distant hills (very soft, blue-violet) -->
+  <path d="M0,230 Q60,180 140,195 Q200,185 270,200 Q330,185 410,198 Q470,185 550,200 Q620,188 700,205 Q760,200 800,210 L800,400 L0,400 Z" fill="url(#hillFar)" opacity="0.55"/>
+
+  <!-- Mid hills -->
+  <path d="M0,265 Q50,235 120,248 Q180,235 250,252 Q310,238 380,254 Q440,238 510,255 Q580,240 650,257 Q720,244 800,258 L800,400 L0,400 Z" fill="url(#hillMid)" opacity="0.6"/>
+
+  <!-- River / water band -->
+  <path d="M260,310 Q300,305 340,308 Q370,306 400,312 Q360,318 310,316 Q280,318 260,310 Z" fill="url(#water)" opacity="0.55"/>
+
+  <!-- Near foreground ground -->
+  <path d="M0,305 Q80,288 170,298 Q240,288 320,302 Q400,290 480,305 Q560,292 640,306 Q720,294 800,305 L800,400 L0,400 Z" fill="url(#ground)" opacity="0.85"/>
+
+  <!-- Foreground flat ground -->
+  <rect x="0" y="345" width="800" height="55" fill="#a8c8b0" opacity="0.9"/>
+
+  <!-- Road path -->
+  <path d="M310,400 L330,345 L370,345 L390,400 Z" fill="url(#road)" opacity="0.5"/>
+
+  <!-- === BUILDINGS / TOWN (center-left cluster) === -->
+
+  <!-- Background/distant building cluster -->
+  <rect x="195" y="252" width="18" height="35" rx="1" fill="#c8d8ee" opacity="0.7"/>
+  <polygon points="195,252 204,242 213,252" fill="#b8cce4" opacity="0.7"/>
+  <rect x="218" y="258" width="14" height="30" rx="1" fill="#c0d0e8" opacity="0.7"/>
+  <polygon points="218,258 225,250 232,258" fill="#b0c4e0" opacity="0.7"/>
+  <rect x="236" y="255" width="16" height="32" rx="1" fill="#c4d4ec" opacity="0.7"/>
+  <rect x="238" y="265" width="4" height="6" rx="0.5" fill="#a8c0dc" opacity="0.8"/>
+  <rect x="245" y="265" width="4" height="6" rx="0.5" fill="#a8c0dc" opacity="0.8"/>
+
+  <!-- Main town buildings -->
+  <!-- Building A - tall with dome -->
+  <rect x="265" y="245" width="22" height="52" rx="2" fill="#d0ddf0"/>
+  <ellipse cx="276" cy="245" rx="11" ry="8" fill="#b8cce8"/>
+  <rect x="268" y="258" width="5" height="8" rx="0.5" fill="#b0c4e0"/>
+  <rect x="278" y="258" width="5" height="8" rx="0.5" fill="#b0c4e0"/>
+  <rect x="268" y="270" width="5" height="8" rx="0.5" fill="#b0c4e0"/>
+  <rect x="278" y="270" width="5" height="8" rx="0.5" fill="#b0c4e0"/>
+  <!-- Flag -->
+  <line x1="276" y1="237" x2="276" y2="228" stroke="#a0b8d8" stroke-width="1"/>
+  <polygon points="276,228 283,231 276,234" fill="#c8a0d0" opacity="0.8"/>
+
+  <!-- Building B - wide civic -->
+  <rect x="290" y="262" width="30" height="35" rx="2" fill="#ccd8ec"/>
+  <rect x="293" y="256" width="24" height="8" rx="1" fill="#bccce4"/>
+  <!-- columns -->
+  <rect x="295" y="264" width="3" height="33" rx="1" fill="#b8c8e0" opacity="0.6"/>
+  <rect x="303" y="264" width="3" height="33" rx="1" fill="#b8c8e0" opacity="0.6"/>
+  <rect x="311" y="264" width="3" height="33" rx="1" fill="#b8c8e0" opacity="0.6"/>
+  <rect x="297" y="272" width="7" height="10" rx="1" fill="#a8bcdc"/>
+  <rect x="307" y="272" width="7" height="10" rx="1" fill="#a8bcdc"/>
+
+  <!-- Building C - small house -->
+  <rect x="323" y="272" width="20" height="25" rx="1.5" fill="#d4dff0"/>
+  <polygon points="321,272 333,260 345,272" fill="#b8cce8"/>
+  <rect x="328" y="280" width="6" height="8" rx="0.5" fill="#a8bcdc"/>
+
+  <!-- Building D - thin tower -->
+  <rect x="347" y="255" width="12" height="42" rx="1.5" fill="#ccd8ec"/>
+  <rect x="346" y="253" width="14" height="4" rx="1" fill="#bccce4"/>
+  <rect x="350" y="262" width="4" height="5" rx="0.5" fill="#a8bcdc"/>
+  <rect x="350" y="271" width="4" height="5" rx="0.5" fill="#a8bcdc"/>
+  <rect x="350" y="280" width="4" height="5" rx="0.5" fill="#a8bcdc"/>
+
+  <!-- Small houses further right -->
+  <rect x="365" y="278" width="16" height="20" rx="1" fill="#d0dcee"/>
+  <polygon points="363,278 373,268 383,278" fill="#b8cce8"/>
+  <rect x="369" y="284" width="5" height="7" rx="0.5" fill="#a8bcdc"/>
+
+  <!-- === TREES === -->
+
+  <!-- Left side trees (larger, foreground) -->
+  <!-- Tree L1 -->
+  <rect x="142" y="305" width="5" height="40" rx="1.5" fill="#7a9870"/>
+  <ellipse cx="144" cy="298" rx="16" ry="20" fill="url(#tree1)" opacity="0.9"/>
+  <ellipse cx="144" cy="292" rx="12" ry="15" fill="url(#tree1)"/>
+
+  <!-- Tree L2 -->
+  <rect x="167" y="310" width="4" height="35" rx="1.5" fill="#7a9870"/>
+  <ellipse cx="169" cy="304" rx="13" ry="17" fill="url(#tree2)" opacity="0.9"/>
+  <ellipse cx="169" cy="298" rx="10" ry="13" fill="url(#tree2)"/>
+
+  <!-- Tree L3 small -->
+  <rect x="185" y="318" width="3" height="27" rx="1" fill="#7a9870"/>
+  <ellipse cx="186" cy="313" rx="10" ry="13" fill="url(#tree3)" opacity="0.9"/>
+
+  <!-- Mid left trees (behind buildings) -->
+  <rect x="222" y="290" width="4" height="25" rx="1" fill="#8aaa80"/>
+  <ellipse cx="224" cy="284" rx="11" ry="14" fill="url(#tree2)" opacity="0.7"/>
+
+  <rect x="244" y="295" width="3" height="20" rx="1" fill="#8aaa80"/>
+  <ellipse cx="245" cy="290" rx="9" ry="12" fill="url(#tree1)" opacity="0.7"/>
+
+  <!-- Right side trees -->
+  <rect x="395" y="308" width="4" height="37" rx="1.5" fill="#7a9870"/>
+  <ellipse cx="397" cy="302" rx="13" ry="16" fill="url(#tree2)" opacity="0.9"/>
+  <ellipse cx="397" cy="296" rx="10" ry="12" fill="url(#tree2)"/>
+
+  <rect x="418" y="305" width="5" height="40" rx="1.5" fill="#7a9870"/>
+  <ellipse cx="420" cy="298" rx="16" ry="20" fill="url(#tree1)" opacity="0.9"/>
+  <ellipse cx="420" cy="292" rx="12" ry="15" fill="url(#tree1)"/>
+
+  <rect x="448" y="310" width="4" height="35" rx="1.5" fill="#8aaa80"/>
+  <ellipse cx="450" cy="304" rx="13" ry="16" fill="url(#tree3)" opacity="0.85"/>
+
+  <!-- Far right trees -->
+  <rect x="510" y="295" width="3" height="22" rx="1" fill="#8aaa80"/>
+  <ellipse cx="511" cy="290" rx="9" ry="12" fill="url(#tree2)" opacity="0.65"/>
+
+  <rect x="540" y="292" width="4" height="25" rx="1" fill="#8aaa80"/>
+  <ellipse cx="542" cy="286" rx="11" ry="13" fill="url(#tree1)" opacity="0.6"/>
+
+  <!-- === FOREGROUND GRASS DETAILS === -->
+  <!-- Small bushes / shrubs foreground -->
+  <ellipse cx="80" cy="352" rx="22" ry="10" fill="#88b890" opacity="0.7"/>
+  <ellipse cx="115" cy="356" rx="15" ry="8" fill="#78a880" opacity="0.65"/>
+  <ellipse cx="480" cy="355" rx="18" ry="9" fill="#88b890" opacity="0.65"/>
+  <ellipse cx="580" cy="350" rx="20" ry="10" fill="#78a880" opacity="0.6"/>
+  <ellipse cx="700" cy="352" rx="16" ry="8" fill="#88b890" opacity="0.6"/>
+
+  <!-- === SOFT BIRDS (distant, tiny) === -->
+  <path d="M480,190 Q483,187 486,190 Q489,187 492,190" stroke="#b0bcd8" stroke-width="1.2" fill="none" opacity="0.5"/>
+  <path d="M510,183 Q512,181 514,183 Q516,181 518,183" stroke="#b0bcd8" stroke-width="1" fill="none" opacity="0.4"/>
+  <path d="M530,196 Q532,194 534,196 Q536,194 538,196" stroke="#b0bcd8" stroke-width="1" fill="none" opacity="0.35"/>
+
+  <!-- Soft mist/haze over hills -->
+  <rect x="0" y="230" width="800" height="50" fill="white" opacity="0.12"/>
+  <rect x="0" y="290" width="800" height="20" fill="white" opacity="0.08"/>
+
+  <!-- Bottom fade to blend into page background -->
+  <linearGradient id="bottomFade" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#fcf8ff" stop-opacity="0"/>
+    <stop offset="100%" stop-color="#f0f4fd" stop-opacity="0.25"/>
+  </linearGradient>
+  <rect x="0" y="340" width="800" height="60" fill="url(#bottomFade)"/>
+</svg>

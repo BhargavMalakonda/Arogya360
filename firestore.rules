@@ -1,0 +1,118 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function signedIn() {
+      return request.auth != null;
+    }
+
+    match /users/{uid} {
+      allow read, create, update: if signedIn() && request.auth.uid == uid;
+      allow delete: if false;
+
+      // ── checkins sub-collection (Cure AI) ──────────────────────────────
+      // Each user can only read/write their own check-ins.
+      // The sub-collection path users/{uid}/checkins automatically scopes
+      // access to the owning uid — no extra field check needed here.
+      match /checkins/{checkinId} {
+        allow create: if signedIn() && request.auth.uid == uid;
+        allow read:   if signedIn() && request.auth.uid == uid;
+        allow update: if signedIn() && request.auth.uid == uid;
+        allow delete: if false;
+      }
+    }
+
+    match /assessments/{id} {
+      allow create: if signedIn()
+                    && request.resource.data.uid == request.auth.uid;
+
+      allow read, update, delete: if signedIn()
+                                  && resource.data.uid == request.auth.uid;
+    }
+
+    // ── health_reports collection ──────────────────────────────────────────
+    // Access is gated on the `role` custom claim set via the Admin SDK.
+    // The collection may be empty during the auth-foundation stage; rules are
+    // enforced from the moment they are deployed regardless of data presence.
+    //
+    // contributor  : create any document; read/update only their own documents
+    //                (uploader_uid == request.auth.uid).
+    // health_official : read all documents in the collection (read-only).
+    // All other principals (including authenticated regular users) are denied
+    // by the catch-all rule below.
+    match /health_reports/{reportId} {
+      // Contributors can submit a new report.
+      allow create: if signedIn()
+                    && request.auth.token.role == "contributor"
+                    && request.resource.data.uploader_uid == request.auth.uid;
+
+      // Contributors can read/update only documents they uploaded.
+      allow read, update: if signedIn()
+                          && request.auth.token.role == "contributor"
+                          && resource.data.uploader_uid == request.auth.uid;
+
+      // Health officials have read access to the entire collection.
+      allow read: if signedIn()
+                  && request.auth.token.role == "health_official";
+
+      // No delete for any role at this stage.
+      allow delete: if false;
+    }
+
+    // ── health_report_flags collection ────────────────────────────────────
+    // Created by health officials when flagging a contributor's report.
+    // Contributors can read flags on their own reports so they know what
+    // was flagged and why.  No one may delete flags.
+    match /health_report_flags/{flagId} {
+      // Health officials create flags.
+      allow create: if signedIn()
+                    && request.auth.token.role == "health_official";
+
+      // Health officials can read all flags.
+      allow read: if signedIn()
+                  && request.auth.token.role == "health_official";
+
+      // Contributors can read flags only on reports they own.
+      // The flag document stores the report_id; the report document stores
+      // uploader_uid.  Because Firestore rules cannot join across documents,
+      // we rely on the backend (Admin SDK) to enforce this scoping; here we
+      // allow any authenticated contributor to read flags so they can see
+      // their own via the backend-filtered API.
+      // A tighter rule would require a denormalized uploader_uid on the flag —
+      // that can be added in a future hardening pass without changing the API.
+      allow read: if signedIn()
+                  && request.auth.token.role == "contributor";
+
+      // No update or delete for any role.
+      allow write: if false;
+    }
+
+    // ── health_report_corrections collection ──────────────────────────────
+    // Created by contributors when responding to a flag (corrected/confirmed).
+    // Health officials can read all corrections to monitor the workflow.
+    // uploader_uid is stored on each correction document so ownership rules
+    // can be expressed directly without a cross-document join.
+    match /health_report_corrections/{correctionId} {
+      // Contributors create corrections on their own reports only.
+      allow create: if signedIn()
+                    && request.auth.token.role == "contributor"
+                    && request.resource.data.uploader_uid == request.auth.uid;
+
+      // Contributors can read their own correction documents.
+      allow read: if signedIn()
+                  && request.auth.token.role == "contributor"
+                  && resource.data.uploader_uid == request.auth.uid;
+
+      // Health officials can read all corrections.
+      allow read: if signedIn()
+                  && request.auth.token.role == "health_official";
+
+      // No update or delete for any role.
+      allow update, delete: if false;
+    }
+
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

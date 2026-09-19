@@ -1,0 +1,1 @@
+AuthContext: setUser and setLoading both deferred until after Firestore profile fetch resolves, guarded with isMounted for StrictMode" — since it's exactly the kind of subtle React/Firebase interaction that could resurface if someone edits this file later without knowing why it's structured this way.

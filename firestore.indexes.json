@@ -1,0 +1,115 @@
+{
+  "indexes": [
+    {
+      "collectionGroup": "assessments",
+      "queryScope": "COLLECTION",
+      "fields": [
+        { "fieldPath": "pincode",          "order": "ASCENDING"  },
+        { "fieldPath": "symptom_category", "order": "ASCENDING"  },
+        { "fieldPath": "created_at",       "order": "DESCENDING" }
+      ]
+    },
+    {
+      "collectionGroup": "assessments",
+      "queryScope": "COLLECTION",
+      "fields": [
+        { "fieldPath": "uid",        "order": "ASCENDING"  },
+        { "fieldPath": "created_at", "order": "DESCENDING" }
+      ]
+    },
+    {
+      "collectionGroup": "assessments",
+      "queryScope": "COLLECTION",
+      "fields": [
+        { "fieldPath": "uid",                  "order": "ASCENDING" },
+        { "fieldPath": "follow_up_completed",  "order": "ASCENDING" },
+        { "fieldPath": "follow_up_date",       "order": "ASCENDING" }
+      ]
+    },
+    {
+      "collectionGroup": "health_reports",
+      "queryScope": "COLLECTION",
+      "fields": [
+        { "fieldPath": "uploader_uid",     "order": "ASCENDING" },
+        { "fieldPath": "client_report_id", "order": "ASCENDING" }
+      ]
+    },
+    {
+      "collectionGroup": "health_reports",
+      "queryScope": "COLLECTION",
+      "fields": [
+        { "fieldPath": "uploader_uid", "order": "ASCENDING"  },
+        { "fieldPath": "created_at",   "order": "DESCENDING" }
+      ]
+    },
+    {
+      "collectionGroup": "health_reports",
+      "queryScope": "COLLECTION",
+      "fields": [
+        { "fieldPath": "esi_level",  "order": "ASCENDING" },
+        { "fieldPath": "created_at", "order": "ASCENDING" }
+      ]
+    },
+    {
+      "collectionGroup": "health_reports",
+      "queryScope": "COLLECTION",
+      "fields": [
+        { "fieldPath": "esi_level",  "order": "ASCENDING" },
+        { "fieldPath": "category",   "order": "ASCENDING" },
+        { "fieldPath": "created_at", "order": "ASCENDING" }
+      ]
+    },
+    {
+      "collectionGroup": "health_reports",
+      "queryScope": "COLLECTION",
+      "fields": [
+        { "fieldPath": "pincode",    "order": "ASCENDING" },
+        { "fieldPath": "created_at", "order": "ASCENDING" }
+      ]
+    },
+    {
+      "collectionGroup": "health_reports",
+      "queryScope": "COLLECTION",
+      "fields": [
+        { "fieldPath": "pincode",    "order": "ASCENDING" },
+        { "fieldPath": "category",   "order": "ASCENDING" },
+        { "fieldPath": "created_at", "order": "ASCENDING" }
+      ]
+    },
+    {
+      "collectionGroup": "health_reports",
+      "queryScope": "COLLECTION",
+      "fields": [
+        { "fieldPath": "pincode",           "order": "ASCENDING" },
+        { "fieldPath": "organization_name", "order": "ASCENDING" },
+        { "fieldPath": "created_at",        "order": "ASCENDING" }
+      ]
+    },
+    {
+      "collectionGroup": "health_reports",
+      "queryScope": "COLLECTION",
+      "fields": [
+        { "fieldPath": "pincode",           "order": "ASCENDING" },
+        { "fieldPath": "organization_name", "order": "ASCENDING" },
+        { "fieldPath": "category",          "order": "ASCENDING" },
+        { "fieldPath": "created_at",        "order": "ASCENDING" }
+      ]
+    },
+    {
+      "collectionGroup": "health_report_flags",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "report_id",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "created_at",
+          "order": "DESCENDING"
+        }
+      ]
+    }
+  ],
+
+  "fieldOverrides": []
+}

@@ -1,0 +1,44 @@
+[
+  {
+    "scheme_name": "Ayushman Bharat PM-JAY",
+    "type": "hospitalization",
+    "eligibility_note": "Bottom 40% of India's population by socioeconomic status as per SECC 2011 data; no premium required for beneficiaries.",
+    "benefit": "Cashless and paperless hospitalization coverage of up to ₹5 lakh per family per year at empanelled public and private hospitals across India for secondary and tertiary care.",
+    "link": "https://beneficiary.nha.gov.in/"
+  },
+  {
+    "scheme_name": "eSanjeevani (National Teleconsultation Service)",
+    "type": "teleconsultation",
+    "eligibility_note": "Available to all Indian citizens; no registration fee. Access via web browser or eSanjeevani mobile app.",
+    "benefit": "Free online doctor consultation with government-empanelled doctors from home. Available in multiple regional languages. Suitable for non-emergency primary care consultations.",
+    "link": "https://esanjeevani.mohfw.gov.in/"
+  },
+  {
+    "scheme_name": "Jan Aushadhi (Pradhan Mantri Bharatiya Janaushadhi Pariyojana)",
+    "type": "medicines",
+    "eligibility_note": "Open to all citizens. Medicines available at Jan Aushadhi Kendras (dedicated generic medicine stores) across India.",
+    "benefit": "Quality generic medicines at 50–90% lower prices than branded equivalents. Over 1,900 medicines and 280 surgical items available.",
+    "link": "https://janaushadhi.gov.in"
+  },
+  {
+    "scheme_name": "National TB Elimination Programme (NTEP)",
+    "type": "disease_specific",
+    "eligibility_note": "All TB patients in India, including presumptive (suspected) TB cases. Free services at all government health facilities.",
+    "benefit": "Free diagnosis (including molecular testing), free complete course of treatment medications, and nutritional support (Nikshay Poshan Yojana — ₹500/month to patients on treatment).",
+    "link": "https://tbcindia.gov.in"
+  },
+  {
+    "scheme_name": "National Programme for Prevention and Control of Cancer, Diabetes, CVD and Stroke (NPCDCS)",
+    "type": "screening",
+    "eligibility_note": "All citizens above 30 years, with priority for rural and semi-urban populations through Sub-Health Centres and PHCs.",
+    "benefit": "Free opportunistic screening for diabetes, hypertension, and common cancers at government health facilities. Referral and follow-up services for diagnosed cases.",
+    "link": "https://main.mohfw.gov.in/organisations/departments/department-health-research/npcdcs"
+  },
+  {
+    "scheme_name": "Rashtriya Swasthya Bima Yojana (RSBY)",
+    "type": "hospitalization",
+    "eligibility_note": "Below-Poverty-Line (BPL) families and certain unorganised-sector workers. Being progressively merged into PM-JAY in most states.",
+    "benefit": "Cashless hospitalization coverage for BPL families at empanelled hospitals for most common illnesses requiring inpatient care.",
+    "link": "https://www.rsby.gov.in"
+  }
+]
