@@ -32,7 +32,7 @@ app.add_middleware(
     CORSMiddleware,
     allow_origins=[
         "http://localhost:5173",
-        "https://your-vercel-domain.vercel.app",  # TODO: update after deploy
+        "https://arogya360-omega.vercel.app",
     ],
     allow_credentials=True,
     allow_methods=["*"],
