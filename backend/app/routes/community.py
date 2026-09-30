@@ -41,7 +41,7 @@ CATEGORY_LABELS = {
     "general":        "General / Viral Symptoms",
 }
 PRIVACY_THRESHOLD = 3   # counts below this are suppressed
-LOOKBACK_DAYS = 7
+LOOKBACK_DAYS = 30
 
 
 def _get_user_pincode(uid: str) -> str | None:
