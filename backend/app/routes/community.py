@@ -40,7 +40,7 @@ CATEGORY_LABELS = {
     "cardiovascular": "Cardiovascular Symptoms",
     "general":        "General / Viral Symptoms",
 }
-PRIVACY_THRESHOLD = 3   # counts below this are suppressed
+PRIVACY_THRESHOLD = 1   # counts below this are suppressed
 LOOKBACK_DAYS = 30
 
 
